@@ -22,6 +22,7 @@
 // server.on('error', console.error);
 import { Server } from 'node-hl7-server'
 
+const array = []
 const server = new Server({ bindAddress: '192.168.49.1' })
 
 const inbound = server.createInbound({ port: 3000 }, async (req, res) => {
@@ -30,6 +31,7 @@ const inbound = server.createInbound({ port: 3000 }, async (req, res) => {
 
 inbound.on('client.close', () => {
   console.log('Client Disconnected')
+
 })
 
 inbound.on('client.connect', () => {
@@ -37,6 +39,7 @@ inbound.on('client.connect', () => {
 })
 
 inbound.on('data.raw', (data) => {
+  array.push(data+'\r');
   console.log('Raw Data:', data)
 })
 
