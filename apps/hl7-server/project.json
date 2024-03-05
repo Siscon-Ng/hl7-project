@@ -1,0 +1,25 @@
+{
+  "name": "hl7-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/hl7-server/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "hl7-server:build",
+        "port": 9000
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "hl7-server:build:development"
+        },
+        "production": {
+          "buildTarget": "hl7-server:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

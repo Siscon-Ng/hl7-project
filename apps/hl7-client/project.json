@@ -1,0 +1,25 @@
+{
+  "name": "hl7-client",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/hl7-client/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "hl7-client:build",
+        "port": 9500
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "hl7-client:build:development"
+        },
+        "production": {
+          "buildTarget": "hl7-client:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
