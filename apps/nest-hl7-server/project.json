@@ -1,0 +1,24 @@
+{
+  "name": "nest-hl7-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nest-hl7-server/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "nest-hl7-server:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nest-hl7-server:build:development"
+        },
+        "production": {
+          "buildTarget": "nest-hl7-server:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

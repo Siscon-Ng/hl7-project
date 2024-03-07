@@ -79,11 +79,10 @@ const hl7 = [
   'OBX|64|NM|11001^Other Abnormal Cells%. Manual^99MRC||0.0|%|||||F',
 ].join('\r');
 
-
-
+// const client = new Client({ host: 'sisprogweb.dynu.net' })
 const client = new Client({ host: '192.168.49.1' })
 
-const OB_ADT = client.createConnection({ port: 3000 }, async (res) => {
+const OB_ADT = client.createConnection({ port: 3500 }, async (res) => {
   const messageRes = res.getMessage()
   const check = messageRes.get('MSA.1').toString() // MSA is a Message Acknoedlgement Segment
   if (check === "AA") {

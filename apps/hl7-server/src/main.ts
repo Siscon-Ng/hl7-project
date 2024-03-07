@@ -20,6 +20,7 @@
 //   console.log(`Listening at http://localhost:${port}/api`);
 // });
 // server.on('error', console.error);
+
 import { Server } from 'node-hl7-server'
 
 const array = []
